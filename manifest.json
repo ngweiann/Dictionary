@@ -1,0 +1,27 @@
+{ 
+	"manifest_version": 2, 
+	"name": "Dictionary",
+	"description": "Searches the selected text on duck duck go",  
+	"version": "0.1",
+	"icons": { 
+		"48": "icons/logo_48.png", 
+        "96": "icons/logo_96.png" 
+    }, 	
+	"content_scripts": [ 
+		{ 
+			"matches": [ 
+			"<all_urls>" 
+			], 
+			"js": ["content.js"] 
+		} 
+	], 
+	"permissions":["contextMenus"],
+	"background": { 
+	"scripts": ["background.js"] 
+	}, 
+	"browser_action": { 
+    "default_icon": "icons/dict.png", 
+    "default_popup": "sketch/index.html", 
+    "default_title": "Lookup a definition!" 
+	} 
+} 
